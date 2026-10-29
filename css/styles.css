@@ -1,0 +1,235 @@
+/* =========================================================
+  PICASSO PALETAS — hoja de estilos
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---------- 1. Variables (colores del logo) ---------- */
+:root {
+  --navy:    #203A72;   /* texto "Picasso" */
+  --azul:    #3B7FE0;
+  --naranja: #E8622A;
+  --amarillo:#F5B81C;
+  --rojo:    #E0392B;
+  --verde:   #3FA14A;
+  --rosa:    #F25FA0;
+
+  --fondo:   #FFFFFF;
+  --gris:    #F5F6F8;
+  --borde:   #E4E7EC;
+  --texto:   #3A4252;
+
+  --radio:   12px;
+  --max:     1100px;
+}
+
+/* ---------- 2. Reset básico ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.6;
+}
+
+a { color: var(--navy); text-decoration: none; }
+a:hover { color: var(--azul); }
+
+/* ---------- 3. Header ---------- */
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+header h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  order: 2;           /* el logo queda a la izquierda del título */
+  margin-right: auto; /* empuja los links a la derecha */
+}
+
+.img-logo {
+  order: 1;
+  width: 350px;
+  height: 70px;
+  object-fit: contain;
+  margin-right: -140px; 
+  margin-left: -100px;
+}
+
+header a {
+  order: 3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+header a:hover { border-bottom-color: var(--azul); }
+
+/* ---------- 4. Main (bloque principal) ---------- */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+  text-align: center;
+}
+
+main p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 2rem;
+}
+
+/* Botón principal */
+main button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--navy);
+  border: none;
+  border-radius: var(--radio);
+  padding: 0.9rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+main button:hover    { background: var(--azul); }
+main button:active   { transform: scale(0.97); }
+
+/* ---------- 5. Secciones de opciones ---------- */
+.ui-colores,
+.ui-formato {
+  max-width: var(--max);
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.ui-colores h2,
+.ui-formato h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8A91A0;
+  margin-bottom: 1rem;
+}
+
+/* Botones secundarios (cantidad y formato) */
+.ui-colores button,
+.ui-formato button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--navy);
+  background: var(--gris);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 0.6rem 1.4rem;
+  margin: 0 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ui-colores button:hover,
+.ui-formato button:hover {
+  background: #fff;
+  border-color: var(--navy);
+}
+
+/* Clase para marcar la opción elegida desde JS */
+.ui-colores button.activo,
+.ui-formato button.activo {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+/* ---------- 6. Footer ---------- */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  background: var(--gris);
+  border-top: 1px solid var(--borde);
+  text-align: center;
+}
+
+footer p {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+footer a {
+  font-size: 0.85rem;
+  margin: 0 0.75rem;
+  color: #6B7280;
+}
+footer a:hover { color: var(--navy); }
+
+/* Línea de colores del logo como detalle decorativo */
+footer::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  margin: 0 auto 1.5rem;
+  border-radius: 4px;
+  background: linear-gradient(to right,
+    var(--azul)    0% 16.6%,
+    var(--naranja) 16.6% 33.3%,
+    var(--amarillo)33.3% 50%,
+    var(--rojo)    50% 66.6%,
+    var(--verde)   66.6% 83.3%,
+    var(--rosa)    83.3% 100%);
+}
+
+/* ---------- 7. Contenedor de la paleta (para cuando sumes el JS) ---------- */
+.paleta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.paleta .color {
+  height: 180px;
+  border-radius: var(--radio);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  cursor: pointer;
+}
+
+/* ---------- 8. Responsive ---------- */
+@media (max-width: 640px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  header h1 { margin-right: 0; width: 100%; text-align: center; order: 2; }
+  main { padding-top: 3rem; }
+  main p { font-size: 1.2rem; }
+  .ui-colores button,
+  .ui-formato button { margin-bottom: 0.5rem; }
+}
