@@ -37,7 +37,7 @@ a { color: var(--navy); text-decoration: none; }
 a:hover { color: var(--azul); }
 
 /* ---------- 3. Header ---------- */
-header {
+.encabezado {
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -47,7 +47,7 @@ header {
   border-bottom: 1px solid var(--borde);
 }
 
-header h1 {
+.encabezado-titulo {
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -56,16 +56,13 @@ header h1 {
   margin-right: auto; /* empuja los links a la derecha */
 }
 
-.img-logo {
+.encabezado-imagen {
   order: 1;
-  width: 350px;
-  height: 70px;
+  height: 4rem;
   object-fit: contain;
-  margin-right: -140px; 
-  margin-left: -100px;
 }
 
-header a {
+.encabezado a{
   order: 3;
   font-size: 0.9rem;
   font-weight: 500;
@@ -73,7 +70,7 @@ header a {
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s;
 }
-header a:hover { border-bottom-color: var(--azul); }
+.encabezado a :hover { border-bottom-color: var(--azul); }
 
 /* ---------- 4. Main (bloque principal) ---------- */
 main {
@@ -91,7 +88,7 @@ main p {
 }
 
 /* Botón principal */
-main button {
+.boton-principal {
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
@@ -103,20 +100,18 @@ main button {
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
-main button:hover    { background: var(--azul); }
-main button:active   { transform: scale(0.97); }
+.boton-principal:hover    { background: var(--azul); }
+.boton-principal:active   { transform: scale(0.97); }
 
 /* ---------- 5. Secciones de opciones ---------- */
-.ui-colores,
-.ui-formato {
+.seccion-seleccion {
   max-width: var(--max);
   margin: 0 auto 2rem;
   padding: 1.5rem;
   text-align: center;
 }
 
-.ui-colores h2,
-.ui-formato h2 {
+.seccion-seleccion h2 {
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -126,8 +121,7 @@ main button:active   { transform: scale(0.97); }
 }
 
 /* Botones secundarios (cantidad y formato) */
-.ui-colores button,
-.ui-formato button {
+.boton-seleccion {
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 500;
@@ -141,8 +135,7 @@ main button:active   { transform: scale(0.97); }
   transition: all 0.2s;
 }
 
-.ui-colores button:hover,
-.ui-formato button:hover {
+.boton-seleccion:hover {
   background: #fff;
   border-color: var(--navy);
 }
