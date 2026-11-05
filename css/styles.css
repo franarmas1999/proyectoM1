@@ -51,26 +51,28 @@ a:hover { color: var(--azul); }
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--navy);
-  order: 2;           /* el logo queda a la izquierda del título */
-  margin-right: auto; /* empuja los links a la derecha */
+  color: var(--navy);           
+  margin-right: auto; 
 }
 
 .encabezado-imagen {
-  order: 1;
   height: 4rem;
   object-fit: contain;
 }
 
-.encabezado a{
-  order: 3;
+.encabezado nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a{
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.4rem 0.2rem;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s;
 }
-.encabezado a :hover { border-bottom-color: var(--azul); }
+nav a:hover { border-bottom-color: var(--azul); }
 
 /* ---------- 4. Main (bloque principal) ---------- */
 main {
@@ -116,7 +118,7 @@ main p {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #8A91A0;
+  color: #6B7280;
   margin-bottom: 1rem;
 }
 
@@ -141,8 +143,7 @@ main p {
 }
 
 /* Clase para marcar la opción elegida desde JS */
-.ui-colores button.activo,
-.ui-formato button.activo {
+.boton-seleccion.activo {
   background: var(--navy);
   border-color: var(--navy);
   color: #fff;
@@ -168,7 +169,7 @@ footer p {
 footer a {
   font-size: 0.85rem;
   margin: 0 0.75rem;
-  color: #6B7280;
+  color: #4B5563;
 }
 footer a:hover { color: var(--navy); }
 
@@ -190,7 +191,7 @@ footer::before {
 }
 
 /* ---------- 7. Contenedor de la paleta (para cuando sumes el JS) ---------- */
-.paleta {
+.seccion-paleta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 0.75rem;
@@ -199,7 +200,7 @@ footer::before {
   padding: 0 1.5rem;
 }
 
-.paleta .color {
+.seccion-paleta--color {
   height: 180px;
   border-radius: var(--radio);
   display: flex;
@@ -215,14 +216,13 @@ footer::before {
 
 /* ---------- 8. Responsive ---------- */
 @media (max-width: 640px) {
-  header {
+  .encabezado {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
   }
-  header h1 { margin-right: 0; width: 100%; text-align: center; order: 2; }
+  .encabezado-titulo { margin-right: 0; width: 100%; text-align: center;}
   main { padding-top: 3rem; }
   main p { font-size: 1.2rem; }
-  .ui-colores button,
-  .ui-formato button { margin-bottom: 0.5rem; }
+  .boton-seleccion { margin-bottom: 0.5rem; }
 }

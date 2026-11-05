@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,13 @@
 </head>
 <body>
     <header class="encabezado">
+        <img class="encabezado-imagen" src="pictures/trimmed-image.png" alt="imgagen del logo">
         <h1 class="encabezado-titulo">PICASSO PALETAS</h1>
-        <img class="encabezado-imagen" src="/pictures/trimmed-image.png" alt="imgagen del logo">
-        <a href="/">Inicio</a>
-        <a href="/contacto">Contacto</a>
-        <a href="#footer">Footer</a>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/contacto">Contacto</a>
+            <a href="#footer">Footer</a>
+        </nav>
         
     </header>
         
@@ -22,8 +24,6 @@
         <button class="boton-principal" type="button">Generar Paleta</button>
     </main>
     
-    <section class="paleta"></section>
-
     <section class="seccion-seleccion">
         <h2>Elige la cantidad de colores</h2>
         <button class="boton-seleccion" type="button">6</button>
@@ -37,11 +37,13 @@
         <button class="boton-seleccion" type="button">RGBA</button>
     </section>
 
+    <section class="seccion-paleta"></section>
+
     <footer id="footer">
         <p>Picasso Paletas</p>
-        <a href="">Terminos y Condiciones</a>
+        <a href="#">Terminos y Condiciones</a>
         <a href="/contacto">Contacto</a>
-        <a href="">Más Informacion</a>
+        <a href="#">Más Informacion</a>
     </footer>
 
 </body>
