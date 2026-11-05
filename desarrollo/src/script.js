@@ -1,4 +1,4 @@
-console.log("Hola JS esta OK");
+// console.log("Hola JS esta OK"); con esto me doy cuenta que esta todo OK
 
 // Memoria inicial del programa, va a ir cambiando
 const seccionPaleta = document.querySelector(".seccion-paleta");
@@ -32,4 +32,8 @@ function dibujarPaleta() {
   seccionPaleta.innerHTML = html;
 }
 
-dibujarPaleta();
+
+// selecciono boton principal
+const botonPrincipal = document.querySelector(".boton-principal");
+
+botonPrincipal.addEventListener("click", dibujarPaleta);
